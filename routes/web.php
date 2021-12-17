@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/messages', [App\Http\Controllers\MessagesController::class, 'index'])->name('messages.index');
+Route::get('/', [App\Http\Controllers\NotesController::class, 'index'])->name('notes.index');
+Route::get('/notes/create', [App\Http\Controllers\NotesController::class, 'create'])->name('notes.create');
+Route::post('/notes/edit', [App\Http\Controllers\NotesController::class, 'edit'])->name('notes.edit');
+Route::post('/notes/update', [App\Http\Controllers\NotesController::class, 'update'])->name('notes.update');
+Route::post('/notes/store', [App\Http\Controllers\NotesController::class, 'store'])->name('notes.store');
+Route::post('/notes/destroy', [App\Http\Controllers\NotesController::class, 'destroy'])->name('notes.destroy');
 
