@@ -4,14 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            {{-- <form method="POST" action="{{ route('notes.destroy') }}">
-                @csrf
-                <input type='hidden' name='id' value='{{ $note->id }}'>
-                <button type="submit" class="btn btn-danger">
-                    DELETE
-                </button>
-            </form> --}}
-            <a href="{{ route('notes.index') }}" style="text-decoration: none;">Back to my notes</a>
+            <div class="d-flex mb-3">
+                <a href="{{ route('notes.index') }}" style="text-decoration: none; flex-basis: 50%;">Back to my notes</a>
+                <form method="POST" style="flex-basis: 50%; text-align:right;" action="{{ route('notes.destroy') }}">
+                    @csrf
+                    <input type='hidden' name='id' value='{{ $note->id }}'>
+                    <button type="submit" class="btn btn-danger">
+                        DELETE
+                    </button>
+                </form>
+            </div>
             <div class="card">
                 <div class="card-header">{{ __('Edit note') }}</div>
 

@@ -24,7 +24,9 @@
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><strong>{{ $note->title }}</strong></div>
+                <div class="card-header">
+                    <h4><strong>{{ $note->title }}</strong></h4> 
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('notes.edit') }}">
                         @csrf
